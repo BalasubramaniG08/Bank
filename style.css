@@ -89,7 +89,8 @@ button:hover {
 }
 
 .output-box {
-  margin-top: 16px;
+  margin-top: 5px;
+  margin-bottom: 20px;
   padding: 15px;
   background-color: #f1f5f9;
   border: 1px solid #ddd;
