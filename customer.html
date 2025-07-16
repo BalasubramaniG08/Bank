@@ -3,36 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Customer Dashboard</title>
+  <title>Customer Portal</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
     <h1>Customer Dashboard</h1>
 
     <form id="depositForm">
-      <input type="number" id="depositAmount" placeholder="Enter Deposit Amount" required />
+      <input type="number" id="depositAmount" placeholder="Enter deposit amount" required />
       <button type="submit">Deposit</button>
-      <p id="depositOutput"></p>
+      <div id="depositOutput" class="output-box"></div>
     </form>
 
     <form id="withdrawForm">
-      <input type="number" id="withdrawAmount" placeholder="Enter Withdrawal Amount" required />
+      <input type="number" id="withdrawAmount" placeholder="Enter withdrawal amount" required />
       <button type="submit">Withdraw</button>
-      <p id="withdrawOutput"></p>
+      <div id="withdrawOutput" class="output-box"></div>
     </form>
 
     <form id="transferForm">
-      <input type="number" id="transferAmount" placeholder="Enter Transfer Amount" required />
+      <input type="number" id="transferAmount" placeholder="Enter amount to transfer" required />
       <button type="submit">Transfer</button>
-      <p id="transferOutput"></p>
+      <div id="transferOutput" class="output-box"></div>
     </form>
 
-    <button id="balanceEnquiryBtn">Balance Enquiry</button>
-    <p id="enquiryOutput"></p>
+    <button id="balanceEnquiryBtn">Check Balance</button>
+    <div id="enquiryOutput" class="output-box"></div>
 
-    <button id="recentTransactionsBtn">View Recent Transactions</button>
+    <button id="recentTransactionsBtn">Recent Transactions</button>
     <div id="transactionOutput" class="output-box"></div>
 
     <button onclick="goBack()" class="back-btn">Back to Home</button>

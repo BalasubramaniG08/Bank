@@ -1,3 +1,4 @@
+// ====== Common Logic ======
 function goBack() {
   window.location.href = "index.html";
 }
@@ -27,7 +28,6 @@ function updateTransaction(mobile, type, amount) {
 
   profile.transactions.push(transaction);
 
-  // Also update balance accordingly
   if (type === "Deposited") {
     profile.balance += parseFloat(amount);
   } else if (type === "Withdrew" || type === "Transferred") {
@@ -74,7 +74,16 @@ if (bankForm) {
       transactions: [],
     };
     setProfile(profile.mobile, profile);
-    alert("Customer registered!");
+    document.getElementById("registrationOutput").innerHTML = `
+      <h3>Registered Successfully</h3>
+      <p><strong>Name:</strong> ${profile.name}</p>
+      <p><strong>Mobile:</strong> ${profile.mobile}</p>
+      <p><strong>DOB:</strong> ${profile.dob}</p>
+      <p><strong>Address:</strong> ${profile.residence}</p>
+      <p><strong>Account Type:</strong> ${profile.accountType}</p>
+      <p><strong>Category:</strong> ${profile.category}</p>
+      <p><strong>Balance:</strong> ₹0</p>
+    `;
     this.reset();
   });
 }

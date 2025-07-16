@@ -9,26 +9,25 @@
 </head>
 <body>
   <div class="container">
-    <h2>Register Bank Account</h2>
+    <h1>Register Bank Account</h1>
     <form id="bankForm">
       <input type="text" id="name" placeholder="Full Name" required />
       <input type="date" id="dob" required />
       <input type="tel" id="mobile" placeholder="Mobile Number" required />
       <input type="text" id="residence" placeholder="Residence" required />
-
       <select id="accountType" required>
         <option value="">Select Account Type</option>
         <option value="Savings">Savings</option>
         <option value="Current">Current</option>
       </select>
-
       <div class="radio-group">
         <label><input type="radio" name="category" value="Individual" checked /> Individual</label>
         <label><input type="radio" name="category" value="Joint" /> Joint</label>
       </div>
-
       <button type="submit">Submit</button>
     </form>
+
+    <div id="registrationOutput" class="output-box"></div>
 
     <input type="tel" id="nextMobile" placeholder="Enter Mobile Number to Continue" />
     <button onclick="goToCustomer()">Enter</button>
