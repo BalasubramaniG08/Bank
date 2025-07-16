@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Customer Panel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Welcome Customer</h2>
+
+    <form id="depositForm">
+      <input type="number" id="depositAmount" placeholder="Amount to Deposit" required />
+      <button type="submit">Deposit</button>
+      <div id="depositOutput" class="output-box"></div>
+    </form>
+
+    <form id="withdrawForm">
+      <input type="number" id="withdrawAmount" placeholder="Amount to Withdraw" required />
+      <button type="submit">Withdraw</button>
+      <div id="withdrawOutput" class="output-box"></div>
+    </form>
+
+    <form id="transferForm">
+      <input type="number" id="transferAmount" placeholder="Amount to Transfer" required />
+      <button type="submit">Transfer</button>
+      <div id="transferOutput" class="output-box"></div>
+    </form>
+
+    <button id="balanceEnquiryBtn">Check Balance</button>
+    <div id="enquiryOutput" class="output-box"></div>
+
+    <button onclick="goBack()">Back to Home</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

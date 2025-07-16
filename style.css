@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #d7e1ec, #f7f9fc);
+  color: #333;
+  min-height: 100vh;
+  padding: 30px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 600;
+  color: #222;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+input[type="password"],
+input[type="tel"],
+select {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.edit-btn {
+  background-color: #28a745;
+  margin-top: 10px;
+}
+.edit-btn:hover {
+  background-color: #218838;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  margin-top: 10px;
+}
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+.output-box {
+  margin-top: 16px;
+  padding: 15px;
+  background-color: #f1f5f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.admin-buttons {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.admin-buttons button {
+  background-color: #007bff;
+  color: white;
+}
+
+ul {
+  margin-top: 10px;
+  padding-left: 18px;
+}
+
+ul li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.edit-delete-btns {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+p, label {
+  font-weight: 500;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bank Registration</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Register Bank Account</h2>
+    <form id="bankForm">
+      <input type="text" id="name" placeholder="Full Name" required />
+      <input type="date" id="dob" required />
+      <input type="tel" id="mobile" placeholder="Mobile Number" required />
+      <input type="text" id="residence" placeholder="Residence" required />
+      <select id="accountType" required>
+        <option value="">Select Account Type</option>
+        <option value="Savings">Savings</option>
+        <option value="Current">Current</option>
+      </select>
+      <div>
+        <label><input type="radio" name="category" value="Individual" checked /> Individual</label>
+        <label><input type="radio" name="category" value="Joint" /> Joint</label>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+
+    <button onclick="goToCustomer()">Enter</button>
+    <input type="password" id="adminPassword" placeholder="Enter Admin Password" />
+    <button onclick="goToAdmin()">Admin</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
