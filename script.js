@@ -1,4 +1,3 @@
-// ====== Common Logic ======
 function goBack() {
   window.location.href = "index.html";
 }
@@ -28,6 +27,7 @@ function updateTransaction(mobile, type, amount) {
 
   profile.transactions.push(transaction);
 
+  // Also update balance accordingly
   if (type === "Deposited") {
     profile.balance += parseFloat(amount);
   } else if (type === "Withdrew" || type === "Transferred") {
@@ -39,9 +39,7 @@ function updateTransaction(mobile, type, amount) {
 
 // ====== Registration Page (index.html) Logic ======
 function goToCustomer() {
-  const mobileInput = document.getElementById("nextMobile");
-  if (!mobileInput) return;
-  const mobile = mobileInput.value.trim();
+  const mobile = document.getElementById("nextMobile").value;
   const profile = getProfile(mobile);
   if (profile) {
     localStorage.setItem("currentCustomer", mobile);
@@ -81,7 +79,7 @@ if (bankForm) {
   });
 }
 
-// ====== Customer Page Logic ======
+// ====== Customer Page Logic (customer.html) ======
 const currentCustomer = localStorage.getItem("currentCustomer");
 
 if (document.getElementById("depositForm")) {
@@ -149,7 +147,21 @@ if (balanceBtn) {
   });
 }
 
-// ====== Admin Page Logic ======
+const recentTxBtn = document.getElementById("recentTransactionsBtn");
+if (recentTxBtn) {
+  recentTxBtn.addEventListener("click", function () {
+    const profile = getProfile(currentCustomer);
+    const txList = profile.transactions;
+    let html = `<h3>Recent Transactions</h3><ul>`;
+    txList.forEach((tx, index) => {
+      html += `<li>#${index + 1} - ${tx.type} ₹${tx.amount} on ${tx.time}</li>`;
+    });
+    html += `</ul>`;
+    document.getElementById("transactionOutput").innerHTML = html;
+  });
+}
+
+// ====== Admin Page Logic (admin.html) ======
 function showTransactions() {
   const mobile = document.getElementById("searchMobile").value.trim();
   if (!mobile) return alert("Please enter mobile number");
@@ -171,6 +183,18 @@ function showTransactions() {
   });
   html += "</ul>";
   document.getElementById("output").innerHTML = html;
+}
+
+function checkAdminBalance() {
+  const mobile = document.getElementById("searchMobile").value.trim();
+  if (!mobile) return alert("Enter customer number");
+
+  const profile = getProfile(mobile);
+  if (!profile) return alert("Customer not found");
+
+  document.getElementById("output").innerHTML = `<h3>${
+    profile.name
+  }'s Balance: ₹${parseFloat(profile.balance).toFixed(2)}</h3>`;
 }
 
 function showProfile() {

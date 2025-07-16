@@ -5,21 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Admin Portal</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
-    <h2>Admin Portal</h2>
+    <h1>Admin Portal</h1>
 
     <input type="tel" id="searchMobile" placeholder="Enter Customer Mobile Number" />
+
     <div class="admin-buttons">
       <button onclick="showProfile()">Account Profile Details</button>
       <button onclick="showTransactions()">Recent Transactions</button>
+      <button onclick="checkAdminBalance()">Check Balance</button>
     </div>
 
     <div id="output" class="output-box"></div>
 
-    <button onclick="goBack()">Back to Home</button>
+    <button onclick="goBack()" class="back-btn">Back to Home</button>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
