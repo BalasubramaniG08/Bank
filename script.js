@@ -1,5 +1,3 @@
-// Shared JavaScript for index.html, customer.html, admin.html
-
 // ====== Common Logic ======
 function goBack() {
   window.location.href = "index.html";
@@ -30,7 +28,6 @@ function updateTransaction(mobile, type, amount) {
 
   profile.transactions.push(transaction);
 
-  // Also update balance accordingly
   if (type === "Deposited") {
     profile.balance += parseFloat(amount);
   } else if (type === "Withdrew" || type === "Transferred") {
@@ -42,7 +39,9 @@ function updateTransaction(mobile, type, amount) {
 
 // ====== Registration Page (index.html) Logic ======
 function goToCustomer() {
-  const mobile = prompt("Enter your registered mobile number:");
+  const mobileInput = document.getElementById("nextMobile");
+  if (!mobileInput) return;
+  const mobile = mobileInput.value.trim();
   const profile = getProfile(mobile);
   if (profile) {
     localStorage.setItem("currentCustomer", mobile);
@@ -82,7 +81,7 @@ if (bankForm) {
   });
 }
 
-// ====== Customer Page Logic (customer.html) ======
+// ====== Customer Page Logic ======
 const currentCustomer = localStorage.getItem("currentCustomer");
 
 if (document.getElementById("depositForm")) {
@@ -150,7 +149,7 @@ if (balanceBtn) {
   });
 }
 
-// ====== Admin Page Logic (admin.html) ======
+// ====== Admin Page Logic ======
 function showTransactions() {
   const mobile = document.getElementById("searchMobile").value.trim();
   if (!mobile) return alert("Please enter mobile number");
